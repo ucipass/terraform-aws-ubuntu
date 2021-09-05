@@ -11,7 +11,7 @@ data "aws_ami" "ubuntu_ami" {
   owners = ["099720109477"]
 }
 
-resource "aws_eip" "public_ip" {
+resource "aws_eip" "eth0_public_ip" {
   vpc                       = true
   network_interface         = aws_network_interface.eth0.id
   # associate_with_private_ip = "10.1.1.10"
