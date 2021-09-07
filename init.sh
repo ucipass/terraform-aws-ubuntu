@@ -1,2 +1,2 @@
 #!/bin/bash
-hostnamectl set-hostname ${host}
+hostnamectl set-hostname ${hostname}.${domain_name}

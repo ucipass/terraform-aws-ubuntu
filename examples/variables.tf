@@ -8,7 +8,7 @@ variable "AWS_REGION" {
   type = string
 }
 
-variable "name" {
-  default="TEST"
+variable "hostname" {
+  default="ub1"
   type = string
 }

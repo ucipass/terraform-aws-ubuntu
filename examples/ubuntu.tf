@@ -6,8 +6,7 @@ provider "aws" {
 
 
 module "ubuntu" {
-  source  = "ucipass/ubuntu/aws"
-  version = "0.0.3"
+  source  = "../"
   name = "TEST"
   subnet_public_id = module.vpc.public_subnets[0]
   subnet_private_id = module.vpc.private_subnets[0]

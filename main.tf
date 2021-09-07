@@ -32,7 +32,7 @@ resource "aws_network_interface" "eth1" {
 }
 
 resource "aws_instance" "EC2_1" {
-  tags = { Name = var.name }
+  tags = { Name = "${var.hostname}.${domain_name}" }
   ami  = data.aws_ami.ubuntu_ami.id
   instance_type = var.instance_type
   key_name = var.key_name
@@ -47,7 +47,7 @@ resource "aws_instance" "EC2_1" {
     device_index         = 1
   }
 
-  user_data = templatefile( "${path.module}/init.sh", { host = var.name } )
+  user_data = templatefile( "${path.module}/init.sh", { host = var.hostname }, { host = var.domain_name } )
   # provisioner "local-exec" {
   #   command = "echo Public IP ${aws_instance.EC2_1.public_ip}"
   # }

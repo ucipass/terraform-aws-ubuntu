@@ -1,7 +1,12 @@
-variable "name" {
+variable "hostname" {
   type = string
-  description = "Unique identifier for EC2 instance and prefix for associated resources"
-  default = "TEST"    
+  description = "Hostname for EC2 instance"
+ }
+
+variable "domain_name" {
+  type = string
+  description = "Domain Name for EC2 instance"
+  default = "aws.local"    
  }
 
 variable "instance_type" {
